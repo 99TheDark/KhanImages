@@ -1,0 +1,25 @@
+#calculations {
+    visibility: hidden;
+}
+
+#elements {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+#result {
+    background-color: rgb(114, 114, 114);
+    padding: 10px;
+    color: white;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: calc(100vw - 10px*2 - 50px*2);
+}

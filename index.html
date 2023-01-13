@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>Image to Encoded String</title>
+    </head>
+    <body>
+        <div id="calculations">
+            <img id="source" width="50px">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="elements">
+            <label for="img">Select image:</label>
+            <input type="file" accept="image/*" onchange="generate(event)">
+            <br><br>
+            <label>Variable Name:</label>
+            <input type="text" id="var-name" onchange="createCode()">
+            <br><br>
+            <div id="result">Your code will appear here...</div>
+        </div>
+    </body>
+</html>
