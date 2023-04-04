@@ -25,7 +25,7 @@ var createCode = function() {
     var obj = "{\nvar " + name + " = generateImage(";
     
     if(data.length === 0) {
-        data = "\'{\"width\":" + w + ",\"height\":" + h + ",\"data\":\"";
+        data = "'{\"width\":" + w + ",\"height\":" + h + ",\"data\":\"";
 
         let datStr = "";
         let lastColor = null;
@@ -71,14 +71,14 @@ var createCode = function() {
         let colorsCountStr = "";
         for(let i = 0; i < Math.min(colorsCount.length, common.length); i++) {
             colorsCountStr += "\"" + colorsCount[i].value + "\",";
-        };
+        }
         colorsCountStr = colorsCountStr.substring(0, colorsCountStr.length - 1);
 
         for(let i = 0; i < Math.min(common.length, colorsCount.length); i++) {
             datStr = datStr.replaceAll(colorsCount[i].value, common[i]);
         }
 
-        data += datStr + "\",\"common\":[" + colorsCountStr + "]}\');";
+        data += datStr + "\",\"common\":[" + colorsCountStr + "]}');";
 
     }
 
@@ -88,7 +88,6 @@ var createCode = function() {
 }
 
 var generate = function(event) {
-    
     // Canvas element
     const canvas = document.getElementById("canvas");
 
@@ -151,14 +150,4 @@ var generate = function(event) {
 
         createCode();
     }
-}
-
-var copy = function() { // w3schools, not working
-    var result = document.getElementById("result");
-
-    result.select();
-    result.setSelectionRange(0, 99999);
-
-    document.execCommand("copy");
-    navigator.clipboard.writeText(result.textContent);
 }
